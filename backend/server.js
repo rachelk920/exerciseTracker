@@ -9,10 +9,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin, *");
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin, *");
+  next();
+});
 
 app.use(cors());
 app.use(express.static('client/build'));
